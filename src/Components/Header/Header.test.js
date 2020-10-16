@@ -21,6 +21,7 @@ describe("header component", () => {
   test("check if the component has text or not", () => {
     const wrapper = setup();
     const headerElement = findByTestAttr(wrapper, "App-header");
+    // console.log(headerElement.text());
     expect(headerElement.text()).not.toBe(0);
   });
 });

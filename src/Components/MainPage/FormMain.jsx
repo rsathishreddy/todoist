@@ -61,7 +61,7 @@ class FormMain extends Component {
       ? this.state.formValues.task1
       : undefined;
     return (
-      <div className="todo-form">
+      <div data-test="todo-form-component" className="todo-form">
         <Form onSubmit={this.handleToggle}>
           <div>
             <Form.Group className="task-name-group">
@@ -73,12 +73,14 @@ class FormMain extends Component {
                   name="task1"
                   onChange={this.handleChange}
                   value={task1}
+                  data-test="input-text-component"
                 />
 
                 <select
                   className="select-class"
                   value={this.state.formValues.selected}
                   onChange={this.handleSelectChanges}
+                  data-test="select-component"
                 >
                   <option value="Choose">Choose</option>
                   <option value="open">Open</option>
@@ -89,6 +91,7 @@ class FormMain extends Component {
                   name="datePicker"
                   onDayChange={this.handleDatePicker}
                   placeholder={this.state.formValues.startDate}
+                  data-test="datepicker-component"
                 />
               </div>
             </Form.Group>
