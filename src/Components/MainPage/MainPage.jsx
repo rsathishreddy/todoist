@@ -64,15 +64,20 @@ class MainPage extends Component {
           <div className="middlepane">
             <FormMain
               toggle={this.handleToggle}
-              handleTaskData={this.handleData}
+              // handleTaskData={this.handleData}
+              data-test="form-main-initial"
             />
           </div>
         ) : (
-          <div className="add-task-button">
+          <div
+            className="add-task-button"
+            data-test="add-task-button-component"
+          >
             <Button
               variant="contained"
               color="primary"
               onClick={this.handleToggle}
+              data-tet="add-task-button"
             >
               <Add /> Add Task
             </Button>
@@ -81,6 +86,7 @@ class MainPage extends Component {
         <div className="data-grid-component">
           <DataGrid
             className="data-grid-class"
+            data-test="ag-data-grid-component"
             row={this.state.taskData}
             editToggle={this.handleEditToggle}
             //  editTask={this.editTaskData}

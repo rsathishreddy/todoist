@@ -119,6 +119,7 @@ class FormMain extends Component {
                 variant="primary"
                 type="submit"
                 onClick={this.handleGrid}
+                data-test="submit-button-2"
               >
                 submit
               </Button>

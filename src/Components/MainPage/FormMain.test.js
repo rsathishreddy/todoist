@@ -49,6 +49,47 @@ describe("todo-form component", () => {
       expect(datepickerElement.length).toBe(1);
     });
   });
+  describe("check if all components are initialized with empty string", () => {
+    let wrapper;
+    beforeEach(() => {
+      const initialState = {
+        addTaskDataReducer: {
+          addTaskData: {
+            data: [],
+            currentTask: {},
+          },
+        },
+      };
+      wrapper = setup(initialState);
+    });
+    test("input text component", () => {
+      const inputElement = findByTestAttr(wrapper, "input-text-component");
+      expect(inputElement.text()).toBe("");
+    });
+    test("select component ", () => {
+      const selectElement = findByTestAttr(wrapper, "select-component");
+      expect(selectElement.text()).not.toBe("");
+      expect(selectElement.text()).toBe("ChooseOpenIn progressdone");
+    });
+    test("datepicker compoent ", () => {
+      const datepickerElement = findByTestAttr(wrapper, "datepicker-component");
+      expect(datepickerElement.text()).toBe("<DayPickerInput />");
+    });
+  });
+  describe("check if data is rendered in data-grid", () => {
+    let wrapper;
+    beforeEach(() => {
+      const initialState = {
+        addTaskDataReducer: {
+          addTaskData: {
+            data: [],
+            currentTask: {},
+          },
+        },
+      };
+      wrapper = setup(initialState);
+    });
+  });
 });
 
 test("", () => {});
